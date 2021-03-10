@@ -226,6 +226,7 @@ def get_preprocessed_mnist():
     train_x, train_y = shuffle(train_x, train_y)
     train_x = np.expand_dims(np.array(train_x), axis=-1)
     test_x = np.expand_dims(np.array(test_x), axis=-1)
+    # print(train_x.shape, train_y.shape, test_x.shape, test_y.shape)
     return (train_x, train_y), (test_x, test_y)
 
 
@@ -458,6 +459,13 @@ def rotated_mnist_60_data_func():
     (train_x, train_y), (test_x, test_y) = get_preprocessed_mnist()
     return make_rotated_dataset(
         train_x, train_y, test_x, test_y, [0.0, 5.0], [5.0, 60.0], [55.0, 60.0],
+        5000, 6000, 48000, 50000)
+
+
+def rotated_mnist_180_data_func():
+    (train_x, train_y), (test_x, test_y) = get_preprocessed_mnist()
+    return make_rotated_dataset(
+        train_x, train_y, test_x, test_y, [0.0, 5.0], [5.0, 180.0], [175.0, 180.0],
         5000, 6000, 48000, 50000)
 
 

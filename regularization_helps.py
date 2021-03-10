@@ -236,6 +236,14 @@ def dialing_rotated_mnist_60_conv_experiment():
 
 
 if __name__ == "__main__":
+    gpus = tf.config.list_physical_devices('GPU')
+    if gpus:
+        try:
+            for gpu in gpus:
+                tf.config.experimental.set_memory_growth(gpu, True)
+        except RuntimeError as e:
+            print(e)
+
     rotated_mnist_regularization_experiment(
         models.unregularized_softmax_conv_model, models.simple_softmax_conv_model, 'ce',
         save_name_base='saved_files/inf_reg_mnist', N=2000, delta_angle=3, num_angles=20,
