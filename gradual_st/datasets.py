@@ -2,7 +2,7 @@
 import collections
 import numpy as np
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.datasets import mnist
+from tensorflow.keras.datasets import mnist, fashion_mnist
 from tensorflow.keras.datasets import cifar10
 import scipy.io
 from scipy import ndimage
@@ -231,6 +231,39 @@ def get_preprocessed_mnist():
     test_x = np.expand_dims(np.array(test_x), axis=-1)
     return (train_x, train_y), (test_x, test_y)
 
+def get_preprocessed_mnist_90():
+    (train_x, train_y), (test_x, test_y) = mnist.load_data()
+    train_x, test_x = train_x / 255.0, test_x / 255.0
+    num_points = train_x.shape[0]
+    extra_length = int(num_points/2)
+    train_x = np.concatenate((train_x, train_x[:extra_length,:,:]), axis=0)
+    train_y = np.concatenate((train_y, train_y[:extra_length]), axis=0)
+    train_x, train_y = shuffle(train_x, train_y)
+    train_x = np.expand_dims(np.array(train_x), axis=-1)
+    test_x = np.expand_dims(np.array(test_x), axis=-1)
+    return (train_x, train_y), (test_x, test_y)
+
+def get_preprocessed_mnist_180():
+    (train_x, train_y), (test_x, test_y) = mnist.load_data()
+    train_x, test_x = train_x / 255.0, test_x / 255.0
+    num_points = train_x.shape[0]
+    extra_length = int(num_points/4)
+    train_x = np.concatenate((train_x, train_x, train_x, train_x[:extra_length,:,:]), axis=0)
+    train_y = np.concatenate((train_y, train_y, train_y, train_y[:extra_length]), axis=0)
+    train_x, train_y = shuffle(train_x, train_y)
+    train_x = np.expand_dims(np.array(train_x), axis=-1)
+    test_x = np.expand_dims(np.array(test_x), axis=-1)
+    return (train_x, train_y), (test_x, test_y)
+
+# fashion MNIST
+def get_preprocessed_fashion_mnist():
+    (train_x, train_y), (test_x, test_y) = fashion_mnist.load_data()
+    train_x, test_x = train_x / 255.0, test_x / 255.0
+    train_x, train_y = shuffle(train_x, train_y)
+    train_x = np.expand_dims(np.array(train_x), axis=-1)
+    test_x = np.expand_dims(np.array(test_x), axis=-1)
+    return (train_x, train_y), (test_x, test_y)
+
 
 def sample_rotate_images(xs, start_angle, end_angle):
     new_xs = []
@@ -439,7 +472,7 @@ def load_portraits_data(load_file='dataset_32x32.mat'):
     return data['Xs'], data['Ys'][0]
 
 
-def load_covtype_data(load_file, normalize=True):
+def load_covtype_data(load_file, normalize=True, metric='water'):
     df = pandas.read_csv(load_file, header=None)
     data = df.to_numpy()
     xs = data[:, :54]
@@ -454,11 +487,24 @@ def load_covtype_data(load_file, normalize=True):
     ys = ys[keep]
     print(len(xs))
 
-    # Sort by (horizontal) distance to water body.
-    dist_to_water = xs[:, 3]
-    indices = np.argsort(dist_to_water, axis=0)
-    xs = xs[indices]
-    ys = ys[indices]
+    if metric == 'roadway':
+        # Sort by (horizontal) distance to roadway.
+        dist_to_roadway = xs[:, 5]
+        indices = np.argsort(dist_to_roadway, axis=0)
+        xs = xs[indices]
+        ys = ys[indices]
+    elif metric == 'firepoint':
+        # Sort by (horizontal) distance to firepoint.
+        dist_to_firepoint = xs[:, 3]
+        indices = np.argsort(dist_to_firepoint, axis=0)
+        xs = xs[indices]
+        ys = ys[indices]
+    else:
+        # Sort by (horizontal) distance to water body.
+        dist_to_water = xs[:, 3]
+        indices = np.argsort(dist_to_water, axis=0)
+        xs = xs[indices]
+        ys = ys[indices]
     return xs, ys
 
 
@@ -485,8 +531,13 @@ def make_portraits_data(n_src_tr, n_src_val, n_inter, n_target_unsup, n_trg_val,
 
 
 def make_cov_data(n_src_tr, n_src_val, n_inter, n_target_unsup, n_trg_val, n_trg_tst,
-                  load_file="data/covtype.data", normalize=True):
-    xs, ys = load_covtype_data(load_file)
+                  load_file="data/covtype.data", normalize=True, metric_type='water'):
+    if metric_type == 'firepoint':
+        xs, ys = load_covtype_data(load_file, metric='firepoint')
+    elif metric_type == 'roadway':
+        xs, ys = load_covtype_data(load_file, metric='roadway')
+    else:
+        xs, ys = load_covtype_data(load_file)
     return make_data(n_src_tr, n_src_val, n_inter, n_target_unsup, n_trg_val, n_trg_tst, xs, ys)
 
 
@@ -495,6 +546,12 @@ def cov_data_func():
 
 def cov_data_small_func():
     return make_cov_data(10000, 40000, 400000, 50000, 25000, 20000)
+
+def cov_data_small_func_firepoint():
+    return make_cov_data(10000, 40000, 400000, 50000, 25000, 20000, metric_type='firepoint')
+
+def cov_data_small_func_roadway():
+    return make_cov_data(10000, 40000, 400000, 50000, 25000, 20000, metric_type='roadway')
 
 def cov_data_func_no_normalize():
     return make_cov_data(40000, 10000, 400000, 50000, 25000, 20000, normalize=False)
@@ -506,6 +563,23 @@ def rotated_mnist_60_data_func():
         train_x, train_y, test_x, test_y, [0.0, 5.0], [5.0, 60.0], [55.0, 60.0],
         5000, 6000, 48000, 50000)
 
+def rotated_fashion_mnist_60_data_func():
+    (train_x, train_y), (test_x, test_y) = get_preprocessed_fashion_mnist()
+    return make_rotated_dataset(
+        train_x, train_y, test_x, test_y, [0.0, 5.0], [5.0, 60.0], [55.0, 60.0],
+        5000, 6000, 48000, 50000)
+
+def rotated_mnist_90_data_func():
+    (train_x, train_y), (test_x, test_y) = get_preprocessed_mnist_90()
+    return make_rotated_dataset(
+        train_x, train_y, test_x, test_y, [0.0, 5.0], [5.0, 90.0], [85.0, 90.0],
+        5000, 6000, 71000, 73000)
+
+def rotated_mnist_180_data_func():
+    (train_x, train_y), (test_x, test_y) = get_preprocessed_mnist_180()
+    return make_rotated_dataset(
+        train_x, train_y, test_x, test_y, [0.0, 5.0], [5.0, 180.0], [175.0, 180.0],
+        5000, 6000, 140000, 142000)
 
 def rotated_mnist_60_dialing_ratios_data_func():
     (train_x, train_y), (test_x, test_y) = get_preprocessed_mnist()

@@ -1,0 +1,217 @@
+Rot Fashion MNIST conv experiment
+
+ Source model:
+accuracy on source:  0.8700000047683716
+accuracy on target:  0.18649999797344208
+
+
+ Oracle model:
+accuracy on target:  0.828000009059906
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.4334999918937683
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+
+
+ Source model:
+accuracy on source:  0.8659999966621399
+accuracy on target:  0.20999999344348907
+
+
+ Oracle model:
+accuracy on target:  0.8374999761581421
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.5550000071525574
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+
+
+ Source model:
+accuracy on source:  0.8679999709129333
+accuracy on target:  0.21299999952316284
+
+
+ Oracle model:
+accuracy on target:  0.8335000276565552
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.48100000619888306
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+
+
+ Source model:
+accuracy on source:  0.8700000047683716
+accuracy on target:  0.19550000131130219
+
+
+ Oracle model:
+accuracy on target:  0.8475000262260437
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.5134999752044678
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+
+
+ Source model:
+accuracy on source:  0.8619999885559082
+accuracy on target:  0.16949999332427979
+
+
+ Oracle model:
+accuracy on target:  0.8385000228881836
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.4514999985694885
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+Saving to saved_files/rot_fashion_mnist_60_conv.dat
+no_adapt_on_src accuracy (%): 86.72 +- 0.22
+no_adapt_on_trg accuracy (%): 19.49 +- 1.17
+oracle_on_trg accuracy (%): 83.70 +- 0.47
+grad_self_train accuracy (%): 48.69 +- 3.20
+trg_self_train accuracy (%): 20.66 +- 0.76
+all_self_train accuracy (%): 21.50 +- 1.31
+best_trg_self_train accuracy (%): 21.31 +- 0.87
+best_all_self_train accuracy (%): 22.00 +- 1.18
+no_adapt_on_src accuracy (%): 86.72 +- 0.22
+no_adapt_on_trg accuracy (%): 19.49 +- 1.17
+oracle_on_trg_imprv accuracy (%): 83.70 +- 0.47
+grad_self_train_imprv accuracy (%): 29.20 +- 2.59
+trg_self_train_imprv accuracy (%): 1.17 +- 0.92
+all_self_train_imprv accuracy (%): 2.01 +- 0.85
+best_trg_self_train_imprv accuracy (%): 1.82 +- 0.75
+best_all_self_train_imprv accuracy (%): 2.51 +- 0.75

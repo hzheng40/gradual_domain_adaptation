@@ -62,6 +62,7 @@ def run_experiment(
     utils.rand_seed(0)
     (src_tr_x, src_tr_y, src_val_x, src_val_y, inter_x, inter_y, dir_inter_x,
         dir_inter_y, trg_val_x, trg_val_y, trg_test_x, trg_test_y) = get_data()
+
     # if needed, we will reload this for each run in the for loop below.
     if num_repeats is None:
         num_repeats = int(inter_x.shape[0] / interval)
@@ -89,6 +90,8 @@ def run_experiment(
         _, oracle_acc = oracle_model.evaluate(trg_eval_x, trg_eval_y, verbose=verbose)
         print("\n\n Oracle model:")
         print("accuracy on target: ", oracle_acc)
+
+
         # Gradual self-training.
         print("\n\n Gradual self-training:")
         teacher = new_model()
@@ -98,21 +101,33 @@ def run_experiment(
             epochs=epochs, soft=soft, confidence_q=conf_q)
         _, acc = student.evaluate(trg_eval_x, trg_eval_y, verbose=verbose)
         print("final gradual acc: ", acc)
-        assert(inter_x.shape[0] == unsup_pseudolabels.shape[0])
+        print(inter_x.shape, unsup_pseudolabels.shape)
+        # assert(inter_x.shape[0] == unsup_pseudolabels.shape[0])
         gradual_accuracies.append(acc)
+
+
+
         # Train to target.
         print("\n\n Direct boostrap to target:")
         teacher = new_model()
         teacher.set_weights(source_model.get_weights())
+
+
+        # 180 mod
+        rand_ind = np.random.randint(dir_inter_x.shape[0], size=42000)
+        dir_inter_x_new = dir_inter_x[rand_ind, :, :]
+        inter_x_new = dir_inter_x[rand_ind, :, :]
+        num_repeats = int(42000 / interval)
+
         target_accuracies, _ = utils.self_train(
-            student_func, teacher, dir_inter_x, epochs=epochs, target_x=trg_eval_x,
+            student_func, teacher, dir_inter_x_new, epochs=epochs, target_x=trg_eval_x,
             target_y=trg_eval_y, repeats=num_repeats, soft=soft, confidence_q=conf_q)
         if run_all_self_train:
             print("\n\n Direct boostrap to all unsup data:")
             teacher = new_model()
             teacher.set_weights(source_model.get_weights())
             all_accuracies, _ = utils.self_train(
-                student_func, teacher, inter_x, epochs=epochs, target_x=trg_eval_x,
+                student_func, teacher, inter_x_new, epochs=epochs, target_x=trg_eval_x,
                 target_y=trg_eval_y, repeats=num_repeats, soft=soft, confidence_q=conf_q)
         else:
             all_accuracies = []
@@ -524,9 +539,33 @@ def cov_mlp_windowed_vs_accumulate_experiment(dropout, interval, retrain):
 def rotated_mnist_60_conv_experiment():
     run_experiment(
         dataset_func=datasets.rotated_mnist_60_data_func, n_classes=10, input_shape=(28, 28, 1),
-        save_file='saved_files/rot_mnist_60_conv.dat',
+        save_file='saved_files/rot_mnist_60_conv4.dat',
+        model_func=models.simple_softmax_conv_model, interval=2000, epochs=10, loss='ce',
+        soft=False, conf_q=0.1, num_runs=1)
+
+# new dataset, fashion mnist rotated
+def rotated_fashion_mnist_60_conv_experiment():
+    run_experiment(
+        dataset_func=datasets.rotated_fashion_mnist_60_data_func, n_classes=10, input_shape=(28, 28, 1),
+        save_file='saved_files/rot_fashion_mnist_60_conv.dat',
         model_func=models.simple_softmax_conv_model, interval=2000, epochs=10, loss='ce',
         soft=False, conf_q=0.1, num_runs=5)
+
+# extension to rotating mnist, 180 target rotation angle
+def rotated_mnist_180_conv_experiment():
+    run_experiment(
+        dataset_func=datasets.rotated_mnist_180_data_func, n_classes=10, input_shape=(28, 28, 1),
+        save_file='saved_files/rot_mnist_180_conv4.dat',
+        model_func=models.simple_softmax_conv_model, interval=2000, epochs=10, loss='ce',
+        soft=False, conf_q=0.1, num_runs=1)
+
+# extension to rotating mnist, 90 target rotation angle
+def rotated_mnist_90_conv_experiment():
+    run_experiment(
+        dataset_func=datasets.rotated_mnist_90_data_func, n_classes=10, input_shape=(28, 28, 1),
+        save_file='saved_files/rot_mnist_90_conv4.dat',
+        model_func=models.simple_softmax_conv_model, interval=2000, epochs=10, loss='ce',
+        soft=False, conf_q=0.1, num_runs=1)
 
 
 def portraits_conv_experiment():
@@ -562,8 +601,22 @@ def cov_mlp_experiment():
         soft=False, conf_q=0.1, num_runs=5)
 
 
-def cov_small_mlp_experiment():
-    run_experiment(
+def cov_small_mlp_experiment(metric='water'):
+    print('Running cov type with metric ' + metric)
+    if metric == 'firepoint':
+        run_experiment(
+        dataset_func=datasets.cov_data_small_func_firepoint, n_classes=2, input_shape=(54,),
+        save_file='saved_files/covtype_small_firepoint.dat',
+        model_func=models.mlp_softmax_model, interval=50000, epochs=5, loss='ce',
+        soft=False, conf_q=0.1, num_runs=5)
+    elif metric == 'roadway':
+        run_experiment(
+        dataset_func=datasets.cov_data_small_func_roadway, n_classes=2, input_shape=(54,),
+        save_file='saved_files/covtype_small_roadway.dat',
+        model_func=models.mlp_softmax_model, interval=50000, epochs=5, loss='ce',
+        soft=False, conf_q=0.1, num_runs=5)
+    else:
+        run_experiment(
         dataset_func=datasets.cov_data_small_func, n_classes=2, input_shape=(54,),
         save_file='saved_files/covtype_small.dat',
         model_func=models.mlp_softmax_model, interval=50000, epochs=5, loss='ce',
@@ -688,6 +741,7 @@ if __name__ == "__main__":
 
     # Main experiments for gradual self-training paper.
 
+    # distance to hydrology (horizontal): index 3
     if args.experiment_name == "cov_type_main" or args.experiment_name == "gradual_shift_main":
         print("Cov type small source.")
         cov_small_mlp_experiment()
@@ -695,6 +749,47 @@ if __name__ == "__main__":
             'saved_files/covtype_small.dat', 'saved_files/covtype_small.json')
         experiment_results_improvements(
             'saved_files/covtype_small.dat', 'saved_files/covtype_small_imprv.json')
+    # result only
+    if args.experiment_name == "cov_type_main_result_only":
+        print("Cov type small source.")
+        # cov_small_mlp_experiment()
+        experiment_results(
+            'saved_files/covtype_small.dat', 'saved_files/covtype_small.json')
+        experiment_results_improvements(
+            'saved_files/covtype_small.dat', 'saved_files/covtype_small_imprv.json')
+
+    # reproduce 1: change metric type
+
+    # distance to roadway: index 5
+    if args.experiment_name == "cov_type_roadway":
+        print("Cov type small source roadway.")
+        cov_small_mlp_experiment(metric='roadway')
+        experiment_results(
+            'saved_files/covtype_small_roadway.dat', 'saved_files/covtype_small_roadway.json')
+        experiment_results_improvements(
+            'saved_files/covtype_small_roadway.dat', 'saved_files/covtype_small_imprv_roadway.json')
+
+    # distance to firepoint: index 9
+    if args.experiment_name == "cov_type_firepoint":
+        print("Cov type small source firepoint.")
+        cov_small_mlp_experiment(metric='firepoint')
+        experiment_results(
+            'saved_files/covtype_small_firepoint.dat', 'saved_files/covtype_small_firepoint.json')
+        experiment_results_improvements(
+            'saved_files/covtype_small_firepoint.dat', 'saved_files/covtype_small_imprv_firepoint.json')
+
+    # result only
+    if args.experiment_name == 'cov_type_firepoint_result_only':
+        experiment_results(
+            'saved_files/covtype_small_firepoint.dat', 'saved_files/covtype_small_firepoint.json')
+        experiment_results_improvements(
+            'saved_files/covtype_small_firepoint.dat', 'saved_files/covtype_small_imprv_firepoint.json')
+
+    if args.experiment_name == 'cov_type_roadway_result_only':
+        experiment_results(
+            'saved_files/covtype_small_roadway.dat', 'saved_files/covtype_small_roadway.json')
+        experiment_results_improvements(
+            'saved_files/covtype_small_roadway.dat', 'saved_files/covtype_small_imprv_roadway.json')
 
     if args.experiment_name == "portraits_main" or args.experiment_name == "gradual_shift_main":
         print("Portraits conv experiment")
@@ -704,13 +799,115 @@ if __name__ == "__main__":
         experiment_results_improvements(
             'saved_files/portraits.dat', 'saved_files/portraits_imprv.json')
 
-    if args.experiment_name == "rotating_mnist_main" or args.experiment_name == "gradual_shift_main":
-        print("Rot MNIST conv experiment")
-        rotated_mnist_60_conv_experiment()
+    if args.experiment_name == "rotating_fashion_mnist_main" or args.experiment_name == "gradual_shift_main":
+        gpus = tf.config.list_physical_devices('GPU')
+        if gpus:
+            try:
+                for gpu in gpus:
+                    tf.config.experimental.set_memory_growth(gpu, True)
+            except RuntimeError as e:
+                print(e)
+        print("Rot Fashion MNIST conv experiment")
+        rotated_fashion_mnist_60_conv_experiment()
         experiment_results(
-            'saved_files/rot_mnist_60_conv.dat', 'saved_files/rot_mnist_60_conv.json')
+            'saved_files/rot_fashion_mnist_60_conv.dat', 'saved_files/rot_fashion_mnist_60_conv.json')
         experiment_results_improvements(
-            'saved_files/rot_mnist_60_conv.dat', 'saved_files/rot_mnist_60_conv_imprv.json')
+            'saved_files/rot_fashion_mnist_60_conv.dat', 'saved_files/rot_fashion_mnist_60_conv_imprv.json')
+
+    if args.experiment_name == "rotating_mnist_main" or args.experiment_name == "gradual_shift_main":
+    #     gpus = tf.config.list_physical_devices('GPU')
+    #     if gpus:
+    #         try:
+    #             for gpu in gpus:
+    #                 tf.config.experimental.set_memory_growth(gpu, True)
+    #         except RuntimeError as e:
+    #             print(e)
+    #     print("Rot MNIST conv experiment")
+    #     rotated_mnist_60_conv_experiment()
+        experiment_results(
+            'saved_files/rot_mnist_60_conv0.dat', 'saved_files/rot_mnist_60_conv0.json')
+        experiment_results_improvements(
+            'saved_files/rot_mnist_60_conv0.dat', 'saved_files/rot_mnist_60_conv0_imprv.json')
+        experiment_results(
+            'saved_files/rot_mnist_60_conv1.dat', 'saved_files/rot_mnist_60_conv1.json')
+        experiment_results_improvements(
+            'saved_files/rot_mnist_60_conv1.dat', 'saved_files/rot_mnist_60_conv1_imprv.json')
+        experiment_results(
+            'saved_files/rot_mnist_60_conv2.dat', 'saved_files/rot_mnist_60_conv2.json')
+        experiment_results_improvements(
+            'saved_files/rot_mnist_60_conv2.dat', 'saved_files/rot_mnist_60_conv2_imprv.json')
+        experiment_results(
+            'saved_files/rot_mnist_60_conv3.dat', 'saved_files/rot_mnist_60_conv3.json')
+        experiment_results_improvements(
+            'saved_files/rot_mnist_60_conv3.dat', 'saved_files/rot_mnist_60_conv3_imprv.json')
+        experiment_results(
+            'saved_files/rot_mnist_60_conv4.dat', 'saved_files/rot_mnist_60_conv4.json')
+        experiment_results_improvements(
+            'saved_files/rot_mnist_60_conv4.dat', 'saved_files/rot_mnist_60_conv4_imprv.json')
+
+    # extension to rotating mnist, bigger angle of rotation
+    if args.experiment_name == "rotating_mnist_180" or args.experiment_name == "gradual_shift_main":
+        gpus = tf.config.list_physical_devices('GPU')
+        if gpus:
+            try:
+                for gpu in gpus:
+                    tf.config.experimental.set_memory_growth(gpu, True)
+            except RuntimeError as e:
+                print(e)
+        print("Rot MNIST conv experiment 180")
+        rotated_mnist_180_conv_experiment()
+        # experiment_results(
+        #     'saved_files/rot_mnist_180_conv0.dat', 'saved_files/rot_mnist_180_conv0.json')
+        # experiment_results_improvements(
+        #     'saved_files/rot_mnist_180_conv0.dat', 'saved_files/rot_mnist_180_conv0_imprv.json')
+        # experiment_results(
+        #     'saved_files/rot_mnist_180_conv1.dat', 'saved_files/rot_mnist_180_conv1.json')
+        # experiment_results_improvements(
+        #     'saved_files/rot_mnist_180_conv1.dat', 'saved_files/rot_mnist_180_conv1_imprv.json')
+        # experiment_results(
+        #     'saved_files/rot_mnist_180_conv2.dat', 'saved_files/rot_mnist_180_conv2.json')
+        # experiment_results_improvements(
+        #     'saved_files/rot_mnist_180_conv2.dat', 'saved_files/rot_mnist_180_conv2_imprv.json')
+        # experiment_results(
+        #     'saved_files/rot_mnist_180_conv3.dat', 'saved_files/rot_mnist_180_conv3.json')
+        # experiment_results_improvements(
+        #     'saved_files/rot_mnist_180_conv3.dat', 'saved_files/rot_mnist_180_conv3_imprv.json')
+        # experiment_results(
+        #     'saved_files/rot_mnist_180_conv4.dat', 'saved_files/rot_mnist_180_conv4.json')
+        # experiment_results_improvements(
+        #     'saved_files/rot_mnist_180_conv4.dat', 'saved_files/rot_mnist_180_conv4_imprv.json')
+
+    # extension to rotating mnist, bigger angle of rotation
+    if args.experiment_name == "rotating_mnist_90" or args.experiment_name == "gradual_shift_main":
+        gpus = tf.config.list_physical_devices('GPU')
+        if gpus:
+            try:
+                for gpu in gpus:
+                    tf.config.experimental.set_memory_growth(gpu, True)
+            except RuntimeError as e:
+                print(e)
+        print("Rot MNIST conv experiment 90")
+        rotated_mnist_90_conv_experiment()
+        # experiment_results(
+        #     'saved_files/rot_mnist_90_conv0.dat', 'saved_files/rot_mnist_90_conv0.json')
+        # experiment_results_improvements(
+        #     'saved_files/rot_mnist_90_conv0.dat', 'saved_files/rot_mnist_90_conv0_imprv.json')
+        # experiment_results(
+        #     'saved_files/rot_mnist_90_conv1.dat', 'saved_files/rot_mnist_90_conv1.json')
+        # experiment_results_improvements(
+        #     'saved_files/rot_mnist_90_conv1.dat', 'saved_files/rot_mnist_90_conv1_imprv.json')
+        # experiment_results(
+        #     'saved_files/rot_mnist_90_conv2.dat', 'saved_files/rot_mnist_90_conv2.json')
+        # experiment_results_improvements(
+        #     'saved_files/rot_mnist_90_conv2.dat', 'saved_files/rot_mnist_90_conv2_imprv.json')
+        # experiment_results(
+        #     'saved_files/rot_mnist_90_conv3.dat', 'saved_files/rot_mnist_90_conv3.json')
+        # experiment_results_improvements(
+        #     'saved_files/rot_mnist_90_conv3.dat', 'saved_files/rot_mnist_90_conv3_imprv.json')
+        experiment_results(
+            'saved_files/rot_mnist_90_conv4.dat', 'saved_files/rot_mnist_90_conv4.json')
+        experiment_results_improvements(
+            'saved_files/rot_mnist_90_conv4.dat', 'saved_files/rot_mnist_90_conv4_imprv.json')
 
     if args.experiment_name == "gaussian_main" or args.experiment_name == "gradual_shift_main":
         print("Gaussian linear experiment")

@@ -1,0 +1,296 @@
+ Source model:
+accuracy on source:  0.9789999723434448
+accuracy on target:  0.3059999942779541
+
+
+ Oracle model:
+accuracy on target:  0.9574999809265137
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.8264999985694885
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+
+
+ Source model:
+accuracy on source:  0.9850000143051147
+accuracy on target:  0.33000001311302185
+
+
+ Oracle model:
+accuracy on target:  0.9574999809265137
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.8420000076293945
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+
+
+ Source model:
+accuracy on source:  0.9800000190734863
+accuracy on target:  0.2865000069141388
+
+
+ Oracle model:
+accuracy on target:  0.9564999938011169
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.8765000104904175
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+
+
+ Source model:
+accuracy on source:  0.9760000109672546
+accuracy on target:  0.30149999260902405
+
+
+ Oracle model:
+accuracy on target:  0.9555000066757202
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.8705000281333923
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+
+
+ Source model:
+accuracy on source:  0.9819999933242798
+accuracy on target:  0.33799999952316284
+
+
+ Oracle model:
+accuracy on target:  0.9610000252723694
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.9265000224113464
+
+
+ Direct boostrap to target:
+Killed
+
+
+
+no_adapt_on_src accuracy (%): 96.80 +- 0.00
+no_adapt_on_trg accuracy (%): 29.75 +- 0.00
+oracle_on_trg accuracy (%): 96.10 +- 0.00
+grad_self_train accuracy (%): 90.80 +- 0.00
+trg_self_train accuracy (%): 29.55 +- 0.00
+all_self_train accuracy (%): 32.80 +- 0.00
+best_trg_self_train accuracy (%): 30.50 +- 0.00
+best_all_self_train accuracy (%): 33.60 +- 0.00
+
+no_adapt_on_src accuracy (%): 96.80 +- 0.00
+no_adapt_on_trg accuracy (%): 29.75 +- 0.00
+oracle_on_trg_imprv accuracy (%): 96.10 +- 0.00
+grad_self_train_imprv accuracy (%): 61.05 +- 0.00
+trg_self_train_imprv accuracy (%): -0.20 +- 0.00
+all_self_train_imprv accuracy (%): 3.05 +- 0.00
+best_trg_self_train_imprv accuracy (%): 0.75 +- 0.00
+best_all_self_train_imprv accuracy (%): 3.85 +- 0.00
+
+
+
+no_adapt_on_src accuracy (%): 97.80 +- 0.00
+no_adapt_on_trg accuracy (%): 30.65 +- 0.00
+oracle_on_trg accuracy (%): 95.90 +- 0.00
+grad_self_train accuracy (%): 83.70 +- 0.00
+trg_self_train accuracy (%): 31.25 +- 0.00
+all_self_train accuracy (%): 33.00 +- 0.00
+best_trg_self_train accuracy (%): 31.55 +- 0.00
+best_all_self_train accuracy (%): 33.50 +- 0.00
+
+no_adapt_on_src accuracy (%): 97.80 +- 0.00
+no_adapt_on_trg accuracy (%): 30.65 +- 0.00
+oracle_on_trg_imprv accuracy (%): 95.90 +- 0.00
+grad_self_train_imprv accuracy (%): 53.05 +- 0.00
+trg_self_train_imprv accuracy (%): 0.60 +- 0.00
+all_self_train_imprv accuracy (%): 2.35 +- 0.00
+best_trg_self_train_imprv accuracy (%): 0.90 +- 0.00
+best_all_self_train_imprv accuracy (%): 2.85 +- 0.00
+
+
+
+no_adapt_on_src accuracy (%): 97.80 +- 0.00
+no_adapt_on_trg accuracy (%): 31.15 +- 0.00
+oracle_on_trg accuracy (%): 96.15 +- 0.00
+grad_self_train accuracy (%): 88.25 +- 0.00
+trg_self_train accuracy (%): 30.15 +- 0.00
+all_self_train accuracy (%): 34.65 +- 0.00
+best_trg_self_train accuracy (%): 30.80 +- 0.00
+best_all_self_train accuracy (%): 34.65 +- 0.00
+
+no_adapt_on_src accuracy (%): 97.80 +- 0.00
+no_adapt_on_trg accuracy (%): 31.15 +- 0.00
+oracle_on_trg_imprv accuracy (%): 96.15 +- 0.00
+grad_self_train_imprv accuracy (%): 57.10 +- 0.00
+trg_self_train_imprv accuracy (%): -1.00 +- 0.00
+all_self_train_imprv accuracy (%): 3.50 +- 0.00
+best_trg_self_train_imprv accuracy (%): -0.35 +- 0.00
+best_all_self_train_imprv accuracy (%): 3.50 +- 0.00
+
+
+
+no_adapt_on_src accuracy (%): 97.90 +- 0.00
+no_adapt_on_trg accuracy (%): 29.15 +- 0.00
+oracle_on_trg accuracy (%): 95.90 +- 0.00
+grad_self_train accuracy (%): 88.50 +- 0.00
+trg_self_train accuracy (%): 30.80 +- 0.00
+all_self_train accuracy (%): 33.00 +- 0.00
+best_trg_self_train accuracy (%): 31.65 +- 0.00
+best_all_self_train accuracy (%): 33.85 +- 0.00
+
+no_adapt_on_src accuracy (%): 97.90 +- 0.00
+no_adapt_on_trg accuracy (%): 29.15 +- 0.00
+oracle_on_trg_imprv accuracy (%): 95.90 +- 0.00
+grad_self_train_imprv accuracy (%): 59.35 +- 0.00
+trg_self_train_imprv accuracy (%): 1.65 +- 0.00
+all_self_train_imprv accuracy (%): 3.85 +- 0.00
+best_trg_self_train_imprv accuracy (%): 2.50 +- 0.00
+best_all_self_train_imprv accuracy (%): 4.70 +- 0.00
+
+
+
+no_adapt_on_src accuracy (%): 97.90 +- 0.00
+no_adapt_on_trg accuracy (%): 31.75 +- 0.00
+oracle_on_trg accuracy (%): 95.90 +- 0.00
+grad_self_train accuracy (%): 90.15 +- 0.00
+trg_self_train accuracy (%): 32.35 +- 0.00
+all_self_train accuracy (%): 33.95 +- 0.00
+best_trg_self_train accuracy (%): 33.30 +- 0.00
+best_all_self_train accuracy (%): 34.85 +- 0.00
+
+no_adapt_on_src accuracy (%): 97.90 +- 0.00
+no_adapt_on_trg accuracy (%): 31.75 +- 0.00
+oracle_on_trg_imprv accuracy (%): 95.90 +- 0.00
+grad_self_train_imprv accuracy (%): 58.40 +- 0.00
+trg_self_train_imprv accuracy (%): 0.60 +- 0.00
+all_self_train_imprv accuracy (%): 2.20 +- 0.00
+best_trg_self_train_imprv accuracy (%): 1.55 +- 0.00
+best_all_self_train_imprv accuracy (%): 3.10 +- 0.00

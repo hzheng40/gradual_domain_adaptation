@@ -1,0 +1,334 @@
+ Source model:
+accuracy on source:  0.9810000061988831
+accuracy on target:  0.15700000524520874
+
+
+ Oracle model:
+accuracy on target:  0.9564999938011169
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.7170000076293945
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+Saving to saved_files/rot_mnist_90_conv0.dat
+no_adapt_on_src accuracy (%): 98.10 +- 0.00
+no_adapt_on_trg accuracy (%): 15.70 +- 0.00
+oracle_on_trg accuracy (%): 95.65 +- 0.00
+grad_self_train accuracy (%): 71.70 +- 0.00
+trg_self_train accuracy (%): 15.40 +- 0.00
+all_self_train accuracy (%): 15.40 +- 0.00
+best_trg_self_train accuracy (%): 15.85 +- 0.00
+best_all_self_train accuracy (%): 15.50 +- 0.00
+no_adapt_on_src accuracy (%): 98.10 +- 0.00
+no_adapt_on_trg accuracy (%): 15.70 +- 0.00
+oracle_on_trg_imprv accuracy (%): 95.65 +- 0.00
+grad_self_train_imprv accuracy (%): 56.00 +- 0.00
+trg_self_train_imprv accuracy (%): -0.30 +- 0.00
+all_self_train_imprv accuracy (%): -0.30 +- 0.00
+best_trg_self_train_imprv accuracy (%): 0.15 +- 0.00
+best_all_self_train_imprv accuracy (%): -0.20 +- 0.00
+
+ Source model:
+accuracy on source:  0.9789999723434448
+accuracy on target:  0.16300000250339508
+
+
+ Oracle model:
+accuracy on target:  0.9549999833106995
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.7325000166893005
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+Saving to saved_files/rot_mnist_90_conv1.dat
+no_adapt_on_src accuracy (%): 97.90 +- 0.00
+no_adapt_on_trg accuracy (%): 16.30 +- 0.00
+oracle_on_trg accuracy (%): 95.50 +- 0.00
+grad_self_train accuracy (%): 73.25 +- 0.00
+trg_self_train accuracy (%): 16.35 +- 0.00
+all_self_train accuracy (%): 16.50 +- 0.00
+best_trg_self_train accuracy (%): 16.70 +- 0.00
+best_all_self_train accuracy (%): 17.00 +- 0.00
+no_adapt_on_src accuracy (%): 97.90 +- 0.00
+no_adapt_on_trg accuracy (%): 16.30 +- 0.00
+oracle_on_trg_imprv accuracy (%): 95.50 +- 0.00
+grad_self_train_imprv accuracy (%): 56.95 +- 0.00
+trg_self_train_imprv accuracy (%): 0.05 +- 0.00
+all_self_train_imprv accuracy (%): 0.20 +- 0.00
+best_trg_self_train_imprv accuracy (%): 0.40 +- 0.00
+best_all_self_train_imprv accuracy (%): 0.70 +- 0.00
+
+ Source model:
+accuracy on source:  0.9819999933242798
+accuracy on target:  0.15299999713897705
+
+
+ Oracle model:
+accuracy on target:  0.9549999833106995
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.6359999775886536
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+Saving to saved_files/rot_mnist_90_conv2.dat
+no_adapt_on_src accuracy (%): 98.20 +- 0.00
+no_adapt_on_trg accuracy (%): 15.30 +- 0.00
+oracle_on_trg accuracy (%): 95.50 +- 0.00
+grad_self_train accuracy (%): 63.60 +- 0.00
+trg_self_train accuracy (%): 15.85 +- 0.00
+all_self_train accuracy (%): 15.30 +- 0.00
+best_trg_self_train accuracy (%): 16.00 +- 0.00
+best_all_self_train accuracy (%): 15.55 +- 0.00
+no_adapt_on_src accuracy (%): 98.20 +- 0.00
+no_adapt_on_trg accuracy (%): 15.30 +- 0.00
+oracle_on_trg_imprv accuracy (%): 95.50 +- 0.00
+grad_self_train_imprv accuracy (%): 48.30 +- 0.00
+trg_self_train_imprv accuracy (%): 0.55 +- 0.00
+all_self_train_imprv accuracy (%): 0.00 +- 0.00
+best_trg_self_train_imprv accuracy (%): 0.70 +- 0.00
+best_all_self_train_imprv accuracy (%): 0.25 +- 0.00
+
+ Source model:
+accuracy on source:  0.9800000190734863
+accuracy on target:  0.14100000262260437
+
+
+ Oracle model:
+accuracy on target:  0.9585000276565552
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.5920000076293945
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+Saving to saved_files/rot_mnist_90_conv3.dat
+no_adapt_on_src accuracy (%): 98.00 +- 0.00
+no_adapt_on_trg accuracy (%): 14.10 +- 0.00
+oracle_on_trg accuracy (%): 95.85 +- 0.00
+grad_self_train accuracy (%): 59.20 +- 0.00
+trg_self_train accuracy (%): 13.20 +- 0.00
+all_self_train accuracy (%): 12.75 +- 0.00
+best_trg_self_train accuracy (%): 13.65 +- 0.00
+best_all_self_train accuracy (%): 13.40 +- 0.00
+no_adapt_on_src accuracy (%): 98.00 +- 0.00
+no_adapt_on_trg accuracy (%): 14.10 +- 0.00
+oracle_on_trg_imprv accuracy (%): 95.85 +- 0.00
+grad_self_train_imprv accuracy (%): 45.10 +- 0.00
+trg_self_train_imprv accuracy (%): -0.90 +- 0.00
+all_self_train_imprv accuracy (%): -1.35 +- 0.00
+best_trg_self_train_imprv accuracy (%): -0.45 +- 0.00
+best_all_self_train_imprv accuracy (%): -0.70 +- 0.00
+
+ Source model:
+accuracy on source:  0.9800000190734863
+accuracy on target:  0.15950000286102295
+
+
+ Oracle model:
+accuracy on target:  0.9589999914169312
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.6769999861717224
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+Saving to saved_files/rot_mnist_90_conv4.dat
+no_adapt_on_src accuracy (%): 98.00 +- 0.00
+no_adapt_on_trg accuracy (%): 15.95 +- 0.00
+oracle_on_trg accuracy (%): 95.90 +- 0.00
+grad_self_train accuracy (%): 67.70 +- 0.00
+trg_self_train accuracy (%): 16.40 +- 0.00
+all_self_train accuracy (%): 15.20 +- 0.00
+best_trg_self_train accuracy (%): 16.60 +- 0.00
+best_all_self_train accuracy (%): 15.80 +- 0.00
+no_adapt_on_src accuracy (%): 98.00 +- 0.00
+no_adapt_on_trg accuracy (%): 15.95 +- 0.00
+oracle_on_trg_imprv accuracy (%): 95.90 +- 0.00
+grad_self_train_imprv accuracy (%): 51.75 +- 0.00
+trg_self_train_imprv accuracy (%): 0.45 +- 0.00
+all_self_train_imprv accuracy (%): -0.75 +- 0.00
+best_trg_self_train_imprv accuracy (%): 0.65 +- 0.00
+best_all_self_train_imprv accuracy (%): -0.15 +- 0.00

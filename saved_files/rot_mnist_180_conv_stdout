@@ -1,0 +1,509 @@
+ Source model:
+accuracy on source:  0.9819999933242798
+accuracy on target:  0.3370000123977661
+
+
+ Oracle model:
+accuracy on target:  0.9480000138282776
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.12449999898672104
+
+
+ Direct boostrap to target:
+
+ Direct boostrap to all unsup data:
+
+no_adapt_on_src accuracy (%): 98.20 +- 0.00
+no_adapt_on_trg accuracy (%): 33.70 +- 0.00
+oracle_on_trg accuracy (%): 94.80 +- 0.00
+grad_self_train accuracy (%): 12.45 +- 0.00
+trg_self_train accuracy (%): 36.15 +- 0.00
+all_self_train accuracy (%): 35.45 +- 0.00
+best_trg_self_train accuracy (%): 36.50 +- 0.00
+best_all_self_train accuracy (%): 35.45 +- 0.00
+no_adapt_on_src accuracy (%): 98.20 +- 0.00
+no_adapt_on_trg accuracy (%): 33.70 +- 0.00
+oracle_on_trg_imprv accuracy (%): 94.80 +- 0.00
+grad_self_train_imprv accuracy (%): -21.25 +- 0.00
+trg_self_train_imprv accuracy (%): 2.45 +- 0.00
+all_self_train_imprv accuracy (%): 1.75 +- 0.00
+best_trg_self_train_imprv accuracy (%): 2.80 +- 0.00
+best_all_self_train_imprv accuracy (%): 1.75 +- 0.00
+
+  Source model:
+accuracy on source:  0.9760000109672546
+accuracy on target:  0.31949999928474426
+
+
+ Oracle model:
+accuracy on target:  0.9465000033378601
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.12349999696016312
+
+
+ Direct boostrap to target:
+
+ Direct boostrap to all unsup data:
+
+Saving to saved_files/rot_mnist_180_conv1.dat
+no_adapt_on_src accuracy (%): 97.60 +- 0.00
+no_adapt_on_trg accuracy (%): 31.95 +- 0.00
+oracle_on_trg accuracy (%): 94.65 +- 0.00
+grad_self_train accuracy (%): 12.35 +- 0.00
+trg_self_train accuracy (%): 32.90 +- 0.00
+all_self_train accuracy (%): 33.40 +- 0.00
+best_trg_self_train accuracy (%): 33.50 +- 0.00
+best_all_self_train accuracy (%): 33.80 +- 0.00
+no_adapt_on_src accuracy (%): 97.60 +- 0.00
+no_adapt_on_trg accuracy (%): 31.95 +- 0.00
+oracle_on_trg_imprv accuracy (%): 94.65 +- 0.00
+grad_self_train_imprv accuracy (%): -19.60 +- 0.00
+trg_self_train_imprv accuracy (%): 0.95 +- 0.00
+all_self_train_imprv accuracy (%): 1.45 +- 0.00
+best_trg_self_train_imprv accuracy (%): 1.55 +- 0.00
+best_all_self_train_imprv accuracy (%): 1.85 +- 0.00
+
+
+ Source model:
+accuracy on source:  0.9760000109672546
+accuracy on target:  0.32850000262260437
+
+
+ Oracle model:
+accuracy on target:  0.9470000267028809
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.12849999964237213
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+Saving to saved_files/rot_mnist_180_conv2.dat
+no_adapt_on_src accuracy (%): 97.60 +- 0.00
+no_adapt_on_trg accuracy (%): 32.85 +- 0.00
+oracle_on_trg accuracy (%): 94.70 +- 0.00
+grad_self_train accuracy (%): 12.85 +- 0.00
+trg_self_train accuracy (%): 34.45 +- 0.00
+all_self_train accuracy (%): 34.45 +- 0.00
+best_trg_self_train accuracy (%): 34.55 +- 0.00
+best_all_self_train accuracy (%): 34.50 +- 0.00
+no_adapt_on_src accuracy (%): 97.60 +- 0.00
+no_adapt_on_trg accuracy (%): 32.85 +- 0.00
+oracle_on_trg_imprv accuracy (%): 94.70 +- 0.00
+grad_self_train_imprv accuracy (%): -20.00 +- 0.00
+trg_self_train_imprv accuracy (%): 1.60 +- 0.00
+all_self_train_imprv accuracy (%): 1.60 +- 0.00
+best_trg_self_train_imprv accuracy (%): 1.70 +- 0.00
+best_all_self_train_imprv accuracy (%): 1.65 +- 0.00
+
+ Source model:
+accuracy on source:  0.9800000190734863
+accuracy on target:  0.3400000035762787
+
+
+ Oracle model:
+accuracy on target:  0.9440000057220459
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.12049999833106995
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+Saving to saved_files/rot_mnist_180_conv3.dat
+no_adapt_on_src accuracy (%): 98.00 +- 0.00
+no_adapt_on_trg accuracy (%): 34.00 +- 0.00
+oracle_on_trg accuracy (%): 94.40 +- 0.00
+grad_self_train accuracy (%): 12.05 +- 0.00
+trg_self_train accuracy (%): 35.70 +- 0.00
+all_self_train accuracy (%): 36.30 +- 0.00
+best_trg_self_train accuracy (%): 36.40 +- 0.00
+best_all_self_train accuracy (%): 36.85 +- 0.00
+no_adapt_on_src accuracy (%): 98.00 +- 0.00
+no_adapt_on_trg accuracy (%): 34.00 +- 0.00
+oracle_on_trg_imprv accuracy (%): 94.40 +- 0.00
+grad_self_train_imprv accuracy (%): -21.95 +- 0.00
+trg_self_train_imprv accuracy (%): 1.70 +- 0.00
+all_self_train_imprv accuracy (%): 2.30 +- 0.00
+best_trg_self_train_imprv accuracy (%): 2.40 +- 0.00
+best_all_self_train_imprv accuracy (%): 2.85 +- 0.00
+
+ Source model:
+accuracy on source:  0.9760000109672546
+accuracy on target:  0.3319999873638153
+
+
+ Oracle model:
+accuracy on target:  0.9474999904632568
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.10949999839067459
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+Saving to saved_files/rot_mnist_180_conv4.dat
+no_adapt_on_src accuracy (%): 97.60 +- 0.00
+no_adapt_on_trg accuracy (%): 33.20 +- 0.00
+oracle_on_trg accuracy (%): 94.75 +- 0.00
+grad_self_train accuracy (%): 10.95 +- 0.00
+trg_self_train accuracy (%): 35.60 +- 0.00
+all_self_train accuracy (%): 35.05 +- 0.00
+best_trg_self_train accuracy (%): 36.25 +- 0.00
+best_all_self_train accuracy (%): 35.40 +- 0.00
+no_adapt_on_src accuracy (%): 97.60 +- 0.00
+no_adapt_on_trg accuracy (%): 33.20 +- 0.00
+oracle_on_trg_imprv accuracy (%): 94.75 +- 0.00
+grad_self_train_imprv accuracy (%): -22.25 +- 0.00
+trg_self_train_imprv accuracy (%): 2.40 +- 0.00
+all_self_train_imprv accuracy (%): 1.85 +- 0.00
+best_trg_self_train_imprv accuracy (%): 3.05 +- 0.00
+best_all_self_train_imprv accuracy (%): 2.20 +- 0.00

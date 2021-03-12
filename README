@@ -12,3 +12,8 @@ code folder (current folder, where the README is). Then run "python create_datas
 Main files
 - gradual_shift_better.py contains scripts for experiments in Section 5.1 and 5.3.
 - regularization_helps.py contains scripts for experiments in Section 5.2.
+
+
+CHANGELOG of CIS620:
+- added experiments for different metrics in cover type experiment (horizontal distance to fire points and roadways)
+- dataset available here: https://archive.ics.uci.edu/ml/datasets/covertype, extract covtype.data into a directory under the repo directory into data/covtype.data

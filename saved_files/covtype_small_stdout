@@ -1,0 +1,138 @@
+Cov type small source.
+581012
+495141
+
+Source model:
+accuracy on source:  0.7655249834060669
+accuracy on target:  0.711080014705658
+
+
+ Oracle model:
+accuracy on target:  0.8434399962425232
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.6483200192451477
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+
+
+ Source model:
+accuracy on source:  0.7703250050544739
+accuracy on target:  0.6413999795913696
+
+
+ Oracle model:
+accuracy on target:  0.840399980545044
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.6838399767875671
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+
+
+ Source model:
+accuracy on source:  0.7589499950408936
+accuracy on target:  0.663919985294342
+
+
+ Oracle model:
+accuracy on target:  0.8560400009155273
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.7071599960327148
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+
+
+ Source model:
+accuracy on source:  0.768750011920929
+accuracy on target:  0.6856399774551392
+
+
+ Oracle model:
+accuracy on target:  0.8451200127601624
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.72079998254776
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+
+
+ Source model:
+accuracy on source:  0.7689999938011169
+accuracy on target:  0.6393200159072876
+
+
+ Oracle model:
+accuracy on target:  0.8613600134849548
+
+
+ Gradual self-training:
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+student-teacher agreement:  1.0
+final gradual acc:  0.7049199938774109
+
+
+ Direct boostrap to target:
+
+
+ Direct boostrap to all unsup data:
+Saving to saved_files/covtype_small.dat

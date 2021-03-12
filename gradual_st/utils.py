@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 def rand_seed(seed):
     np.random.seed(seed)
-    tf.set_random_seed(seed)
+    tf.random.set_seed(seed)
 
 
 def populate_dict(name_values_list, mult):
