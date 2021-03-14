@@ -102,7 +102,7 @@ def run_experiment(
         _, acc = student.evaluate(trg_eval_x, trg_eval_y, verbose=verbose)
         print("final gradual acc: ", acc)
         print(inter_x.shape, unsup_pseudolabels.shape)
-        # assert(inter_x.shape[0] == unsup_pseudolabels.shape[0])
+        assert(inter_x.shape[0] == unsup_pseudolabels.shape[0])
         gradual_accuracies.append(acc)
 
 
@@ -113,21 +113,33 @@ def run_experiment(
         teacher.set_weights(source_model.get_weights())
 
 
-        # 180 mod
-        rand_ind = np.random.randint(dir_inter_x.shape[0], size=42000)
-        dir_inter_x_new = dir_inter_x[rand_ind, :, :]
-        inter_x_new = dir_inter_x[rand_ind, :, :]
-        num_repeats = int(42000 / interval)
+        # # 180 mod
+        # rand_ind = np.random.randint(dir_inter_x.shape[0], size=42000)
+        # dir_inter_x_new = dir_inter_x[rand_ind, :, :]
+        # inter_x_new = inter_x[rand_ind, :, :]
+        # num_repeats = int(42000 / interval)
+
+        # target_accuracies, _ = utils.self_train(
+        #     student_func, teacher, dir_inter_x_new, epochs=epochs, target_x=trg_eval_x,
+        #     target_y=trg_eval_y, repeats=num_repeats, soft=soft, confidence_q=conf_q)
+
+        # if run_all_self_train:
+        #     print("\n\n Direct boostrap to all unsup data:")
+        #     teacher = new_model()
+        #     teacher.set_weights(source_model.get_weights())
+        #     all_accuracies, _ = utils.self_train(
+        #         student_func, teacher, inter_x_new, epochs=epochs, target_x=trg_eval_x,
+        #         target_y=trg_eval_y, repeats=num_repeats, soft=soft, confidence_q=conf_q)
 
         target_accuracies, _ = utils.self_train(
-            student_func, teacher, dir_inter_x_new, epochs=epochs, target_x=trg_eval_x,
+            student_func, teacher, dir_inter_x, epochs=epochs, target_x=trg_eval_x,
             target_y=trg_eval_y, repeats=num_repeats, soft=soft, confidence_q=conf_q)
         if run_all_self_train:
             print("\n\n Direct boostrap to all unsup data:")
             teacher = new_model()
             teacher.set_weights(source_model.get_weights())
             all_accuracies, _ = utils.self_train(
-                student_func, teacher, inter_x_new, epochs=epochs, target_x=trg_eval_x,
+                student_func, teacher, inter_x, epochs=epochs, target_x=trg_eval_x,
                 target_y=trg_eval_y, repeats=num_repeats, soft=soft, confidence_q=conf_q)
         else:
             all_accuracies = []

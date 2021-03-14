@@ -495,7 +495,7 @@ def load_covtype_data(load_file, normalize=True, metric='water'):
         ys = ys[indices]
     elif metric == 'firepoint':
         # Sort by (horizontal) distance to firepoint.
-        dist_to_firepoint = xs[:, 3]
+        dist_to_firepoint = xs[:, 9]
         indices = np.argsort(dist_to_firepoint, axis=0)
         xs = xs[indices]
         ys = ys[indices]
