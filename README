@@ -24,6 +24,7 @@ CHANGELOG of CIS620:
 To run the new experiments:
 
     Cover Type:
+        Dataset from https://archive.ics.uci.edu/ml/datasets/covertype, extract covtype.data into a directory under the repo directory into data/covtype.data
         Change the argument --experiment_name to cov_type_roadway for the roadway experiment
 
         Change the argument --experiment_name to cov_type_firepoint for the firepoint experiment
