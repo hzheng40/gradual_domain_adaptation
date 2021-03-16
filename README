@@ -15,5 +15,25 @@ Main files
 
 
 CHANGELOG of CIS620:
+- change code syntax and bug fix for tensorflow 2
 - added experiments for different metrics in cover type experiment (horizontal distance to fire points and roadways)
 - dataset available here: https://archive.ics.uci.edu/ml/datasets/covertype, extract covtype.data into a directory under the repo directory into data/covtype.data
+- added experiment for rotmnist 90 and rotmnist 180
+- added experiment for fashion mnist
+
+To run the new experiments:
+
+    Cover Type:
+        Change the argument --experiment_name to cov_type_roadway for the roadway experiment
+
+        Change the argument --experiment_name to cov_type_firepoint for the firepoint experiment
+
+    rotMNIST 90/180
+        Change the argument --experiment_name to rotating_mnist_180, and uncomment line 117-132 for rotmnist 90 mod,
+
+        Change the argument --experiment_name to rotating_mnist_90, and uncomment line 117-132, and change new_num_intermediate to 134000 for rotmnist 180 mod
+    
+    Fashion MNIST:
+        Change the argument --experiment_name to rotating_fashion_mnist_main for the fashion mnist experiment
+
+To run dataset analysis: run cov_type_analysis.py

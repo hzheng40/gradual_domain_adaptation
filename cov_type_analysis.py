@@ -44,7 +44,7 @@ if __name__ == '__main__':
     data_firepoint = data[:, 9]
     data_water = data[:, 3]
 
-    plt.rcParams.update({'font.size': 22})
+    plt.rcParams.update({'font.size': 32})
 
     # binning and plotting as bars
 
@@ -61,6 +61,7 @@ if __name__ == '__main__':
     plt.xlabel('Horizontal Distance to Hydrology')
     plt.ylabel('Count')
     plt.title('Cover Type: Hydrology')
+    plt.ylim(0, 50000)
     plt.show()
 
     # fire
@@ -76,6 +77,7 @@ if __name__ == '__main__':
     plt.xlabel('Horizontal Distance to Fire Points')
     plt.ylabel('Count')
     plt.title('Cover Type: Fire Points')
+    plt.ylim(0, 50000)
     plt.show()
 
     # roadway
@@ -91,4 +93,5 @@ if __name__ == '__main__':
     plt.xlabel('Horizontal Distance to Roadways')
     plt.ylabel('Count')
     plt.title('Cover Type: Roadways')
+    plt.ylim(0, 50000)
     plt.show()

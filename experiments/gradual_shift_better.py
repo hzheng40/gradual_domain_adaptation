@@ -113,11 +113,12 @@ def run_experiment(
         teacher.set_weights(source_model.get_weights())
 
 
-        # # 180 mod
-        # rand_ind = np.random.randint(dir_inter_x.shape[0], size=42000)
+        # # uncomment line 117-132 for rotmnist 90 mod, uncomment line 117-132, and change new_num_intermediate to 134000 for rotmnist 180 mod
+        # new_num_intermediate = 42000
+        # rand_ind = np.random.randint(dir_inter_x.shape[0], size=new_num_intermediate)
         # dir_inter_x_new = dir_inter_x[rand_ind, :, :]
         # inter_x_new = inter_x[rand_ind, :, :]
-        # num_repeats = int(42000 / interval)
+        # num_repeats = int(new_num_intermediate / interval)
 
         # target_accuracies, _ = utils.self_train(
         #     student_func, teacher, dir_inter_x_new, epochs=epochs, target_x=trg_eval_x,
@@ -551,9 +552,9 @@ def cov_mlp_windowed_vs_accumulate_experiment(dropout, interval, retrain):
 def rotated_mnist_60_conv_experiment():
     run_experiment(
         dataset_func=datasets.rotated_mnist_60_data_func, n_classes=10, input_shape=(28, 28, 1),
-        save_file='saved_files/rot_mnist_60_conv4.dat',
+        save_file='saved_files/rot_mnist_60_conv.dat',
         model_func=models.simple_softmax_conv_model, interval=2000, epochs=10, loss='ce',
-        soft=False, conf_q=0.1, num_runs=1)
+        soft=False, conf_q=0.1, num_runs=5)
 
 # new dataset, fashion mnist rotated
 def rotated_fashion_mnist_60_conv_experiment():
@@ -567,17 +568,17 @@ def rotated_fashion_mnist_60_conv_experiment():
 def rotated_mnist_180_conv_experiment():
     run_experiment(
         dataset_func=datasets.rotated_mnist_180_data_func, n_classes=10, input_shape=(28, 28, 1),
-        save_file='saved_files/rot_mnist_180_conv4.dat',
+        save_file='saved_files/rot_mnist_180_conv.dat',
         model_func=models.simple_softmax_conv_model, interval=2000, epochs=10, loss='ce',
-        soft=False, conf_q=0.1, num_runs=1)
+        soft=False, conf_q=0.1, num_runs=5)
 
 # extension to rotating mnist, 90 target rotation angle
 def rotated_mnist_90_conv_experiment():
     run_experiment(
         dataset_func=datasets.rotated_mnist_90_data_func, n_classes=10, input_shape=(28, 28, 1),
-        save_file='saved_files/rot_mnist_90_conv4.dat',
+        save_file='saved_files/rot_mnist_90_conv.dat',
         model_func=models.simple_softmax_conv_model, interval=2000, epochs=10, loss='ce',
-        soft=False, conf_q=0.1, num_runs=1)
+        soft=False, conf_q=0.1, num_runs=5)
 
 
 def portraits_conv_experiment():
@@ -827,35 +828,19 @@ if __name__ == "__main__":
             'saved_files/rot_fashion_mnist_60_conv.dat', 'saved_files/rot_fashion_mnist_60_conv_imprv.json')
 
     if args.experiment_name == "rotating_mnist_main" or args.experiment_name == "gradual_shift_main":
-    #     gpus = tf.config.list_physical_devices('GPU')
-    #     if gpus:
-    #         try:
-    #             for gpu in gpus:
-    #                 tf.config.experimental.set_memory_growth(gpu, True)
-    #         except RuntimeError as e:
-    #             print(e)
-    #     print("Rot MNIST conv experiment")
-    #     rotated_mnist_60_conv_experiment()
+        gpus = tf.config.list_physical_devices('GPU')
+        if gpus:
+            try:
+                for gpu in gpus:
+                    tf.config.experimental.set_memory_growth(gpu, True)
+            except RuntimeError as e:
+                print(e)
+        print("Rot MNIST conv experiment")
+        rotated_mnist_60_conv_experiment()
         experiment_results(
-            'saved_files/rot_mnist_60_conv0.dat', 'saved_files/rot_mnist_60_conv0.json')
+            'saved_files/rot_mnist_60_conv.dat', 'saved_files/rot_mnist_60_conv0.json')
         experiment_results_improvements(
-            'saved_files/rot_mnist_60_conv0.dat', 'saved_files/rot_mnist_60_conv0_imprv.json')
-        experiment_results(
-            'saved_files/rot_mnist_60_conv1.dat', 'saved_files/rot_mnist_60_conv1.json')
-        experiment_results_improvements(
-            'saved_files/rot_mnist_60_conv1.dat', 'saved_files/rot_mnist_60_conv1_imprv.json')
-        experiment_results(
-            'saved_files/rot_mnist_60_conv2.dat', 'saved_files/rot_mnist_60_conv2.json')
-        experiment_results_improvements(
-            'saved_files/rot_mnist_60_conv2.dat', 'saved_files/rot_mnist_60_conv2_imprv.json')
-        experiment_results(
-            'saved_files/rot_mnist_60_conv3.dat', 'saved_files/rot_mnist_60_conv3.json')
-        experiment_results_improvements(
-            'saved_files/rot_mnist_60_conv3.dat', 'saved_files/rot_mnist_60_conv3_imprv.json')
-        experiment_results(
-            'saved_files/rot_mnist_60_conv4.dat', 'saved_files/rot_mnist_60_conv4.json')
-        experiment_results_improvements(
-            'saved_files/rot_mnist_60_conv4.dat', 'saved_files/rot_mnist_60_conv4_imprv.json')
+            'saved_files/rot_mnist_60_conv.dat', 'saved_files/rot_mnist_60_conv0_imprv.json')
 
     # extension to rotating mnist, bigger angle of rotation
     if args.experiment_name == "rotating_mnist_180" or args.experiment_name == "gradual_shift_main":
@@ -868,26 +853,10 @@ if __name__ == "__main__":
                 print(e)
         print("Rot MNIST conv experiment 180")
         rotated_mnist_180_conv_experiment()
-        # experiment_results(
-        #     'saved_files/rot_mnist_180_conv0.dat', 'saved_files/rot_mnist_180_conv0.json')
-        # experiment_results_improvements(
-        #     'saved_files/rot_mnist_180_conv0.dat', 'saved_files/rot_mnist_180_conv0_imprv.json')
-        # experiment_results(
-        #     'saved_files/rot_mnist_180_conv1.dat', 'saved_files/rot_mnist_180_conv1.json')
-        # experiment_results_improvements(
-        #     'saved_files/rot_mnist_180_conv1.dat', 'saved_files/rot_mnist_180_conv1_imprv.json')
-        # experiment_results(
-        #     'saved_files/rot_mnist_180_conv2.dat', 'saved_files/rot_mnist_180_conv2.json')
-        # experiment_results_improvements(
-        #     'saved_files/rot_mnist_180_conv2.dat', 'saved_files/rot_mnist_180_conv2_imprv.json')
-        # experiment_results(
-        #     'saved_files/rot_mnist_180_conv3.dat', 'saved_files/rot_mnist_180_conv3.json')
-        # experiment_results_improvements(
-        #     'saved_files/rot_mnist_180_conv3.dat', 'saved_files/rot_mnist_180_conv3_imprv.json')
-        # experiment_results(
-        #     'saved_files/rot_mnist_180_conv4.dat', 'saved_files/rot_mnist_180_conv4.json')
-        # experiment_results_improvements(
-        #     'saved_files/rot_mnist_180_conv4.dat', 'saved_files/rot_mnist_180_conv4_imprv.json')
+        experiment_results(
+            'saved_files/rot_mnist_180_conv.dat', 'saved_files/rot_mnist_180_conv0.json')
+        experiment_results_improvements(
+            'saved_files/rot_mnist_180_conv.dat', 'saved_files/rot_mnist_180_conv0_imprv.json')
 
     # extension to rotating mnist, bigger angle of rotation
     if args.experiment_name == "rotating_mnist_90" or args.experiment_name == "gradual_shift_main":
@@ -900,26 +869,10 @@ if __name__ == "__main__":
                 print(e)
         print("Rot MNIST conv experiment 90")
         rotated_mnist_90_conv_experiment()
-        # experiment_results(
-        #     'saved_files/rot_mnist_90_conv0.dat', 'saved_files/rot_mnist_90_conv0.json')
-        # experiment_results_improvements(
-        #     'saved_files/rot_mnist_90_conv0.dat', 'saved_files/rot_mnist_90_conv0_imprv.json')
-        # experiment_results(
-        #     'saved_files/rot_mnist_90_conv1.dat', 'saved_files/rot_mnist_90_conv1.json')
-        # experiment_results_improvements(
-        #     'saved_files/rot_mnist_90_conv1.dat', 'saved_files/rot_mnist_90_conv1_imprv.json')
-        # experiment_results(
-        #     'saved_files/rot_mnist_90_conv2.dat', 'saved_files/rot_mnist_90_conv2.json')
-        # experiment_results_improvements(
-        #     'saved_files/rot_mnist_90_conv2.dat', 'saved_files/rot_mnist_90_conv2_imprv.json')
-        # experiment_results(
-        #     'saved_files/rot_mnist_90_conv3.dat', 'saved_files/rot_mnist_90_conv3.json')
-        # experiment_results_improvements(
-        #     'saved_files/rot_mnist_90_conv3.dat', 'saved_files/rot_mnist_90_conv3_imprv.json')
         experiment_results(
-            'saved_files/rot_mnist_90_conv4.dat', 'saved_files/rot_mnist_90_conv4.json')
+            'saved_files/rot_mnist_90_conv1.dat', 'saved_files/rot_mnist_90_conv0.json')
         experiment_results_improvements(
-            'saved_files/rot_mnist_90_conv4.dat', 'saved_files/rot_mnist_90_conv4_imprv.json')
+            'saved_files/rot_mnist_90_conv1.dat', 'saved_files/rot_mnist_90_conv0_imprv.json')
 
     if args.experiment_name == "gaussian_main" or args.experiment_name == "gradual_shift_main":
         print("Gaussian linear experiment")
